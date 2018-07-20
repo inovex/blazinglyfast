@@ -6,7 +6,8 @@ cache:
     - "node_modules" # This will tell Travis CI to cache the dependencies
 
 before_script:
-  - cd blazingly-fast-blog # change dir to project
+  - pwd
+  - cd blazingly-fast-blog/ # change dir to project
   - yarn # install dependencies
   - yarn build # build project
   - yarn test # run performance prechecks
