@@ -1,5 +1,0 @@
-{
-  "type": "static",
-  "alias": "blazingly-fast-blog.now.sh",
-  "files": ["public", "package.json", "yarn.lock"]
-}

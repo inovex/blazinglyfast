@@ -34,16 +34,21 @@
     "typography-theme-wordpress-2016": "^0.15.10"
   },
   "devDependencies": {
-    "eslint": "^5.1.0",
     "@octokit/rest": "^15.9.4",
+    "bundlesize": "^0.17.0",
+    "eslint": "^5.1.0",
     "eslint-plugin-react": "^7.10.0",
-    "lighthouse-ci": "git+https://github.com/ebidel/lighthouse-ci.git",
     "gh-pages": "^1.2.0",
+    "lighthouse-ci": "git+https://github.com/ebidel/lighthouse-ci.git",
     "now": "^11.3.0",
     "prettier": "^1.13.7",
+    "serve": "^9.3.0",
     "size-limit": "^0.18.5",
-    "webpagetest": "^0.3.8",
-    "bundlesize": "^0.17.0"
+    "webpagetest": "^0.3.8"
+  },
+  "now": {
+    "name": "jcofman",
+    "alias": "blazingly-fast-blog.now.sh"
   },
   "homepage": "https://github.com/gatsbyjs/gatsby-starter-blog#readme",
   "keywords": [
@@ -64,6 +69,7 @@
     "test": "bundlesize && size-limit",
     "format": "prettier --trailing-comma es5 --no-semi --single-quote --write 'src/**/*.js' 'src/**/*.md'",
     "develop": "gatsby develop",
+    "start": "serve public/",
     "build": "gatsby build",
     "deploy": "now --public -e NODE_ENV=production --token $NOW_TOKEN --yarn",
     "fix-semi": "eslint --quiet --ignore-pattern node_modules --ignore-pattern public --parser babel-eslint --no-eslintrc --rule '{\"semi\": [2, \"never\"], \"no-extra-semi\": [2]}' --fix gatsby-node.js"
