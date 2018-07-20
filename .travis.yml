@@ -6,6 +6,8 @@ cache:
     - "node_modules" # This will tell Travis CI to cache the dependencies
 
 before_install:
+  - pwd
+  - ls
   - cd blazingly-fast-blog
 
 install:
