@@ -46,10 +46,6 @@
     "size-limit": "^0.18.5",
     "webpagetest": "^0.3.8"
   },
-  "now": {
-    "name": "jcofman",
-    "alias": "blazingly-fast-blog.now.sh"
-  },
   "homepage": "https://github.com/gatsbyjs/gatsby-starter-blog#readme",
   "keywords": [
     "gatsby"

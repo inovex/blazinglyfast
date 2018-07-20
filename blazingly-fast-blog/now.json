@@ -1,0 +1,5 @@
+{
+  "name": "blazingly-fast-blog",
+  "alias": "blazingly-fast-blog.now.sh",
+  "files": ["public"]
+}
