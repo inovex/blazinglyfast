@@ -8,16 +8,12 @@ cache:
 before_install:
   - pwd
   - ls
-  - cd blazingly-fast-blog
+  - cd blazingly-fast-blog 
 
 install:
-  - yarn
+  - yarn # install dependencies 
 
 before_script:
-  - pwd
-  - ls
-  - cd blazingly-fast-blog # change dir to project
-  - yarn # install dependencies
   - yarn build # build project
   - yarn test # run performance prechecks
 
