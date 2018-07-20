@@ -5,18 +5,15 @@ cache:
   directories:
     - "node_modules" # This will tell Travis CI to cache the dependencies
 
-install:
-  - cd Blazingly-Fast-Blog
-  - yarn
-
 before_script:
-  - cd Blazingly-Fast-Blog
-  - yarn build
-  - yarn test
+  - cd blazingly-fast-blog # change dir to project
+  - yarn # install dependencies
+  - yarn build # build project
+  - yarn test # run performance prechecks
 
 
 script: 
-  - NOW_URL="$(now --public -e NODE_ENV=production --token $NOW_TOKEN --yarn)"
+  - NOW_URL="$(now --public -e NODE_ENV=production --token $NOW_TOKEN --yarn)" # deploy to now
   # store deployment url from clipboard into the deployment url 
   - echo $NOW_URL
 
