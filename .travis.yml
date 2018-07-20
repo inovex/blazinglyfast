@@ -4,8 +4,9 @@ node_js:
 cache:
   directories:
     - "node_modules" # This will tell Travis CI to cache the dependencies
-    
+
 install:
+  - cd Blazingly-Fast-Blog
   - yarn
 
 before_script:
