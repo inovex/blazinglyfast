@@ -8,28 +8,28 @@ cache:
 before_install:
   - pwd
   - ls
-  - cd blazingly-fast-blog 
+  - cd blazingly-fast-blog
 
 install:
-  - yarn # install dependencies 
+  - yarn # install dependencies
 
 before_script:
   - yarn build # build project
   - yarn test # run performance prechecks
 
-
-script: 
+script:
+  - now switch inovex
   - NOW_URL="$(now --public --token $NOW_TOKEN)" # deploy to now
-  # store deployment url from clipboard into the deployment url 
+  # store deployment url from clipboard into the deployment url
   - echo $NOW_URL
 
-after_success: 
+after_success:
   # https://graysonkoonce.com/getting-the-current-branch-name-during-a-pull-request-in-travis-ci/
   - export BRANCH=$(if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then echo $TRAVIS_BRANCH; else echo $TRAVIS_PULL_REQUEST_BRANCH; fi)
   - echo "TRAVIS_BRANCH=$TRAVIS_BRANCH, PR=$PR, BRANCH=$BRANCH"
   # alias url only when deploying master branch
   - ls
   - if [ $BRANCH = master ]; then now alias --token=$NOW_TOKEN; fi
- # - $BRANCH=master && npm run alias 
+  # - $BRANCH=master && npm run alias
   - npm run lh $NOW_URL
   - TEST_URL=$NOW_URL GIT_TOKEN=$GIT_TOKEN WEBPAGETEST_API_KEY=$WEBPAGETEST_API_KEY node webPageTest.js

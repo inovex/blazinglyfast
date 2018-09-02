@@ -1,18 +1,19 @@
-# ⚡️How to build a high-performance web app and how to keep it top notch ⚡️
+# ⚡️ How to build a high-performance web app and how to keep it top notch ⚡️
 
-[![Build Status][build-badge]][build]
+[![Build Status](https://travis-ci.org/inovex/blazinglyfast.svg?branch=master)](https://travis-ci.org/inovex/blazinglyfast)
 
-[![Lighthouse score: 85/100](https://lighthouse-badge.appspot.com/?score=85&category=Perf&compact&cachebust)]
-[![Lighthouse score: 85/100](https://lighthouse-badge.appspot.com/?score=85&category=PWA&compact&cachebust)]
-[![Lighthouse score: 85/100](https://lighthouse-badge.appspot.com/?score=85&category=A11y&compact&cachebust)]
-[![Lighthouse score: 85/100](https://lighthouse-badge.appspot.com/?score=85&category=Best Practices&compact&cachebust)]
+[![Lighthouse score: 85/100](https://lighthouse-badge.appspot.com/?score=85&category=Perf&compact&cachebust)](https://github.com/inovex/blazinglyfast/)
+[![Lighthouse score: 85/100](https://lighthouse-badge.appspot.com/?score=85&category=PWA&compact&cachebust)](https://github.com/inovex/blazinglyfast/)
+[![Lighthouse score: 85/100](https://lighthouse-badge.appspot.com/?score=85&category=A11y&compact&cachebust)](https://github.com/inovex/blazinglyfast/)
+[![Lighthouse score: 85/100](https://lighthouse-badge.appspot.com/?score=85&category=Best Practices&compact&cachebust)](https://github.com/inovex/blazinglyfast/)
 
 This is a sample repo which is uses [gatsby](https://github.com/gatsbyjs/gatsby) starter-blog and shows how you can leverage modern performance quality assurance technqiues on how to start with a fast and performant web project and how to keep it performant. You can use most of the tools with all other web project based on vue, react angular or vanilla js.
 
 While there are a lot of awesome resources on how to improve performance leveraging modern techniques like code splitting or the PRPL-pattern... etc. I couldn't find a lot of information on how to build an automated ci pipeline to make sure that you don't regret on performance or at least you can decide wheter these changes are worth the performance degration. This repo covers some steps on how you can use awesome open source tools and include them in your CI pipeline.
 
-## Define a performance budget
+## Setting the baseline
 
+Define a performance budget
 Before you can
 
 ## gatsby-starter-blog

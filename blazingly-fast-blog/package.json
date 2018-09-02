@@ -34,16 +34,16 @@
     "typography-theme-wordpress-2016": "^0.15.10"
   },
   "devDependencies": {
-    "@octokit/rest": "^15.9.5",
+    "@octokit/rest": "^15.10.0",
     "bundlesize": "^0.17.0",
-    "eslint": "^5.3.0",
-    "eslint-plugin-react": "^7.10.0",
+    "eslint": "^5.5.0",
+    "eslint-plugin-react": "^7.11.1",
     "gh-pages": "^1.2.0",
     "lighthouse-ci": "git+https://github.com/ebidel/lighthouse-ci.git",
-    "now": "^11.3.9",
+    "now": "^11.4.1",
     "prettier": "^1.14.2",
-    "serve": "^9.4.2",
-    "size-limit": "^0.19.1",
+    "serve": "^10.0.0",
+    "size-limit": "^0.19.3",
     "webpagetest": "^0.3.8"
   },
   "homepage": "https://github.com/gatsbyjs/gatsby-starter-blog#readme",
