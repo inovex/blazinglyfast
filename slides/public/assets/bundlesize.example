@@ -1,0 +1,10 @@
+"bundlesize": [
+  {
+    "path": "./dist/vendor-*.js",
+    "maxSize": "170 kB"
+  },
+  {
+    "path": "./dist/chunk-*.js",
+    "maxSize": "3 kB"
+  }
+]

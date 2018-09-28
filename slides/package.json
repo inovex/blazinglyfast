@@ -3,8 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "raw-loader": "^0.5.1",
     "react": "^16.5.1",
     "react-dom": "^16.5.1",
+    "spectacle-code-slide": "^0.5.2",
     "spectacle-scripts": "2.0.0",
     "victory": "^30.3.1"
   },
