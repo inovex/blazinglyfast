@@ -54,5 +54,17 @@ module.exports = {
         pathToConfigModule: 'src/utils/typography',
       },
     },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Blazingly fast gatsby starter blog`,
+        short_name: `Blazingly-fast`,
+        start_url: `/`,
+        background_color: `#f7f0eb`,
+        theme_color: `#007acc`,
+        display: `minimal-ui`,
+        icon: `src/images/icon.png`, // This path is relative to the root of the site.
+      },
+    },
   ],
 }

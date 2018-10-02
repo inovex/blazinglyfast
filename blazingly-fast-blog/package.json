@@ -38,6 +38,7 @@
     "bundlesize": "^0.17.0",
     "eslint": "^5.6.1",
     "eslint-plugin-react": "^7.11.1",
+    "gatsby-plugin-manifest": "^2.0.4",
     "gh-pages": "^2.0.0",
     "lighthouse-ci": "git+https://github.com/ebidel/lighthouse-ci.git",
     "now": "^11.4.6",

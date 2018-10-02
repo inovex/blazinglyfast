@@ -5864,6 +5864,15 @@ gatsby-plugin-google-analytics@2.0.6:
   dependencies:
     "@babel/runtime" "^7.0.0"
 
+gatsby-plugin-manifest@^2.0.4:
+  version "2.0.4"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-manifest/-/gatsby-plugin-manifest-2.0.4.tgz#c53ed4181bf1f6fef621469ab2b43c67081c76df"
+  integrity sha512-ErCJTR2UdHxspl22L/qZRs8zx6ETF3+TlTewqeLur7aCSF6qjyPwzFOTqSlaP/N3dW6cusL4c6za7jCXAiV0GQ==
+  dependencies:
+    "@babel/runtime" "^7.0.0"
+    bluebird "^3.5.0"
+    sharp "^0.20.2"
+
 gatsby-plugin-offline@2.0.5:
   version "2.0.5"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-offline/-/gatsby-plugin-offline-2.0.5.tgz#11cd7941116ea3f7d3127a4343ce880ca1d10497"
@@ -6043,10 +6052,10 @@ gatsby-transformer-sharp@2.1.3:
     probe-image-size "^4.0.0"
     sharp "^0.20.2"
 
-gatsby@2.0.13:
-  version "2.0.13"
-  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-2.0.13.tgz#8392b2ad84e82cbfb4097b7ec912ad7d8a511b5e"
-  integrity sha512-wcGYKvX8CrmPNX71o9S1++gBAQ8ynIroDkbL/L7VlFWutLJ+mch9PYqq0gxiyj6U/cgVhIf6FMOZV2A2X/DmBw==
+gatsby@2.0.14:
+  version "2.0.14"
+  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-2.0.14.tgz#cd7de9d27d9656d1da020a0562628a44643a6fac"
+  integrity sha512-TbzqAA9AlWwQ8BQCDibJMcsDi6Hks4son9DtHdyCpzpw+aouDgPR2Z+rVJ9UIkFqlmrT3MR4E50zftPlhQ6zjg==
   dependencies:
     "@babel/code-frame" "^7.0.0"
     "@babel/core" "^7.0.0"

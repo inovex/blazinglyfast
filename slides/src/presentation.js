@@ -439,6 +439,40 @@ export default class Presentation extends React.Component {
             </span>
           </Heading>
         </Slide>
+        <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
+          <Heading
+            size={4}
+            textColor="inovexdarkblue"
+            textFont="header"
+            style={{
+              transform: "skew(0, -4deg) rotateY(20deg)",
+              background: "aqua"
+            }}
+          >
+            Start fast
+          </Heading>
+          Use a modern stackgatsby / Next.js / vuepress .... they are all fast
+          when you start. logos der projekte
+        </Slide>
+        <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
+          <Heading
+            size={4}
+            textColor="inovexdarkblue"
+            textFont="header"
+            style={{
+              transform: "skew(0, -4deg) rotateY(20deg)",
+              background: "aqua"
+            }}
+          >
+            Start Lighthousescore sooo damn fast
+          </Heading>
+          <Image
+            width="70%"
+            alt="lighthouse starting point"
+            src={"./assets/gatsby-default-starter-lighthouse.png"}
+          />
+          but lets make it faster
+        </Slide>
         <Slide
           transition={["spin", "slide"]}
           bgColor="secondary"
