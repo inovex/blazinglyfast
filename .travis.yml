@@ -18,8 +18,7 @@ before_script:
   - yarn test # run performance prechecks
 
 script:
-  - now switch --token=$NOW_TOKEN --team=inovex
-  - NOW_URL="$(now --public --token $NOW_TOKEN)" # deploy to now
+  - NOW_URL="$(now --public --token=$NOW_TOKEN --team=inovex)" # deploy to now
   # store deployment url from clipboard into the deployment url
   - echo $NOW_URL
 
