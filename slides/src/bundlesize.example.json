@@ -1,3 +1,6 @@
+"scripts": {
+  "test:size": "bundlesize"
+},
 "bundlesize": [
   {
     "path": "./dist/vendor-*.js",
@@ -5,6 +8,6 @@
   },
   {
     "path": "./dist/chunk-*.js",
-    "maxSize": "3 kB"
+    "maxSize": "50 kB"
   }
 ]

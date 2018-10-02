@@ -1,5 +1,5 @@
-var GitHubApi = require("@octokit/rest");
-var webPageTest = require("webpagetest");
+var GitHubApi = require('@octokit/rest')
+var webPageTest = require('webpagetest')
 
 if (
   (process.env.WEBPAGETEST_API_KEY ||
@@ -7,23 +7,23 @@ if (
     process.env.GIT_TOKEN) === undefined
 ) {
   throw new Error(
-    "The script hasnt run since you did not provide a webpagtest api key a test url and a git token"
-  );
+    'The script hasnt run since you did not provide a webpagtest api key a test url and a git token'
+  )
 }
 const wpt = new webPageTest(
-  "www.webpagetest.org",
+  'www.webpagetest.org',
   process.env.WEBPAGETEST_API_KEY
-);
+)
 
-var myRepo = "jc-website";
-var myOwner = "JCofman";
-var dataAsMarkdown = "";
-const testURL = process.env.TEST_URL;
+const myRepo = 'blazinglyfast'
+const myOwner = 'inovex'
+let dataAsMarkdown = ''
+const testURL = process.env.TEST_URL
 
 // init github
-var github = new GitHubApi();
+var github = new GitHubApi()
 
-github.authenticate({ type: "oauth", token: process.env.GIT_TOKEN });
+github.authenticate({ type: 'oauth', token: process.env.GIT_TOKEN })
 
 wpt.runTest(
   testURL,
@@ -31,66 +31,66 @@ wpt.runTest(
     video: true,
     pollResults: 5,
     timeout: 1000,
-    lighthouse: true
+    lighthouse: true,
   },
   function(err, result) {
-    console.log(err || result);
+    console.log(err || result)
     if (result) {
-      convertToMarkdown(result);
+      convertToMarkdown(result)
     }
   }
-);
+)
 
 const humanFileSize = size => {
-  var i = Math.floor(Math.log(size) / Math.log(1024));
+  var i = Math.floor(Math.log(size) / Math.log(1024))
   return (
     (size / Math.pow(1024, i)).toFixed(2) * 1 +
-    " " +
-    ["B", "kB", "MB", "GB", "TB"][i]
-  );
-};
+    ' ' +
+    ['B', 'kB', 'MB', 'GB', 'TB'][i]
+  )
+}
 
 const convertToMarkdown = result => {
-  console.log("FIRSTVIEW Load time:", result.data.average.firstView.loadTime);
-  console.log("FIRSTVIEW First byte:", result.data.average.firstView.TTFB);
-  console.log("FIRSTVIEW Start render:", result.data.average.firstView.render);
+  console.log('FIRSTVIEW Load time:', result.data.average.firstView.loadTime)
+  console.log('FIRSTVIEW First byte:', result.data.average.firstView.TTFB)
+  console.log('FIRSTVIEW Start render:', result.data.average.firstView.render)
   console.log(
-    "FIRSTVIEW Speed Index:",
+    'FIRSTVIEW Speed Index:',
     result.data.average.firstView.SpeedIndex
-  );
+  )
   console.log(
-    "FIRSTVIEW DOM elements:",
+    'FIRSTVIEW DOM elements:',
     result.data.average.firstView.domElements
-  );
+  )
   console.log(
-    "FIRSTVIEW VisualComplete:",
+    'FIRSTVIEW VisualComplete:',
     result.data.average.firstView.visualComplete
-  );
+  )
 
   console.log(
-    "(FIRSTVIEW Doc complete) Requests:",
+    '(FIRSTVIEW Doc complete) Requests:',
     result.data.average.firstView.requestsDoc
-  );
+  )
   console.log(
-    "(FIRSTVIEW Doc complete) Bytes in:",
+    '(FIRSTVIEW Doc complete) Bytes in:',
     result.data.average.firstView.bytesInDoc
-  );
+  )
 
   console.log(
-    "(FIRSTVIEW Fully loaded) Time:",
+    '(FIRSTVIEW Fully loaded) Time:',
     result.data.average.firstView.fullyLoaded
-  );
+  )
   console.log(
-    "(FIRSTVIEW Fully loaded) Requests:",
+    '(FIRSTVIEW Fully loaded) Requests:',
     result.data.average.firstView.requestsFull
-  );
+  )
   console.log(
-    "(FIRSTVIEW Fully loaded) Bytes in:",
+    '(FIRSTVIEW Fully loaded) Bytes in:',
     result.data.average.firstView.bytesIn
-  );
+  )
 
-  console.log(`URL tested: ${result.data.testUrl}`);
-  console.log(`* Summary of the test: ${result.data.summary}`);
+  console.log(`URL tested: ${result.data.testUrl}`)
+  console.log(`* Summary of the test: ${result.data.summary}`)
 
   dataAsMarkdown = `
 # WebpageTest report
@@ -108,7 +108,7 @@ const convertToMarkdown = result => {
 |----------|----------|
  ${result.data.median.firstView.requests
    .map(request => `${request.url}|${humanFileSize(request.bytesIn)} \r\n`)
-   .join("")}
+   .join('')}
 
 # VisualMetrics
 ## Metrics Median
@@ -157,7 +157,7 @@ ${result.data.median.firstView.videoFrames
 | ${item.VisuallyComplete}|
     `
     )
-    .join("")}
+    .join('')}
         
 
 ## ReapeatView median
@@ -170,14 +170,13 @@ ${result.data.median.repeatView.videoFrames
 | ${item.VisuallyComplete}|
     `
     )
-    .join("")}
-    `;
+    .join('')}
+    `
   /**
    * first get all commits
    * then get latest
    * and push webpagetest results as comment to latest commit
    */
-
   github.repos
     .getCommits({ owner: myOwner, repo: myRepo })
     .then(allCommits => {
@@ -185,12 +184,12 @@ ${result.data.median.repeatView.videoFrames
         owner: myOwner,
         repo: myRepo,
         sha: allCommits.data[0].sha,
-        body: dataAsMarkdown
-      });
+        body: dataAsMarkdown,
+      })
     })
     .catch(error => {
       console.log(`ERROR could either not get commits of the repo ${myRepo} of the owner ${myOwner}
             or could not sent the commit to the repositorie ERRORMSG: ${error}
-            `);
-    });
-};
+            `)
+    })
+}
