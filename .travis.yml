@@ -31,4 +31,4 @@ after_success:
   - if [ $BRANCH = master ]; then now alias --token=$NOW_TOKEN; fi
   # - $BRANCH=master && npm run alias
   - npm run lh $NOW_URL
-  - TEST_URL=$NOW_URL GIT_TOKEN=$GIT_TOKEN WEBPAGETEST_API_KEY=$WEBPAGETEST_API_KEY node webPageTest.js
+  - TEST_URL=$NOW_URL GIT_TOKEN=$GIT_TOKEN WEBPAGETEST_API_KEY=$WEBPAGETEST_API_KEY GIT_BRANCH=$TRAVIS_BRANCH node webPageTest.js

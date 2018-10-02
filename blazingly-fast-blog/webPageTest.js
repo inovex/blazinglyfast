@@ -4,26 +4,29 @@ var webPageTest = require('webpagetest')
 if (
   (process.env.WEBPAGETEST_API_KEY ||
     process.env.TEST_URL ||
-    process.env.GIT_TOKEN) === undefined
+    process.env.GIT_TOKEN ||
+    process.env.GIT_BRANCH) === undefined
 ) {
   throw new Error(
     'The script hasnt run since you did not provide a webpagtest api key a test url and a git token'
   )
 }
-const wpt = new webPageTest(
-  'www.webpagetest.org',
-  process.env.WEBPAGETEST_API_KEY
-)
+
+const webpagetestApiKey = process.env.WEBPAGETEST_API_KEY
+const testURL = process.env.TEST_URL
+const gitToken = process.env.GIT_TOKEN
+const gitBranch = process.env.GIT_BRANCH
+
+const wpt = new webPageTest('www.webpagetest.org', webpagetestApiKey)
 
 const myRepo = 'blazinglyfast'
 const myOwner = 'inovex'
 let dataAsMarkdown = ''
-const testURL = process.env.TEST_URL
 
 // init github
 var github = new GitHubApi()
 
-github.authenticate({ type: 'oauth', token: process.env.GIT_TOKEN })
+github.authenticate({ type: 'oauth', token: gitToken })
 
 wpt.runTest(
   testURL,
@@ -178,7 +181,7 @@ ${result.data.median.repeatView.videoFrames
    * and push webpagetest results as comment to latest commit
    */
   github.repos
-    .getCommits({ owner: myOwner, repo: myRepo })
+    .getCommits({ owner: myOwner, repo: myRepo, sha: gitBranch })
     .then(allCommits => {
       return github.repos.createCommitComment({
         owner: myOwner,
