@@ -26,7 +26,7 @@ class Template extends React.Component {
             }}
             to={'/'}
           >
-            Gatsby Starter Blog
+            ⚡️🚀🚗💨 Blazingly fast gatsby starter blog
           </Link>
         </h1>
       )

@@ -1,9 +1,10 @@
 module.exports = {
   siteMetadata: {
-    title: 'Gatsby Starter Blog',
-    author: 'Kyle Mathews',
-    description: 'A starter blog demonstrating what Gatsby can do.',
-    siteUrl: 'https://gatsbyjs.github.io/gatsby-starter-blog/',
+    title: ' ⚡️🚀🚗💨 Blazingly fast gatsby starter blog',
+    author: 'Jacob Cofman',
+    description:
+      'A blazingly fast starter blog demonstrating what Gatsby can do.',
+    siteUrl: 'https://blazingly-fast-blog.now.sh',
   },
   pathPrefix: '/gatsby-starter-blog',
   plugins: [
@@ -51,6 +52,18 @@ module.exports = {
       resolve: 'gatsby-plugin-typography',
       options: {
         pathToConfigModule: 'src/utils/typography',
+      },
+    },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Blazingly fast gatsby starter blog`,
+        short_name: `Blazingly-fast`,
+        start_url: `/`,
+        background_color: `#f7f0eb`,
+        theme_color: `#007acc`,
+        display: `minimal-ui`,
+        icon: `src/images/icon.png`, // This path is relative to the root of the site.
       },
     },
   ],
