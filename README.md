@@ -2,10 +2,15 @@
 
 [![Build Status](https://travis-ci.org/inovex/blazinglyfast.svg?branch=master)](https://travis-ci.org/inovex/blazinglyfast)
 
-[![Lighthouse score: 85/100](https://lighthouse-badge.appspot.com/?score=85&category=Perf&compact&cachebust)](https://github.com/inovex/blazinglyfast/)
-[![Lighthouse score: 85/100](https://lighthouse-badge.appspot.com/?score=85&category=PWA&compact&cachebust)](https://github.com/inovex/blazinglyfast/)
-[![Lighthouse score: 85/100](https://lighthouse-badge.appspot.com/?score=85&category=A11y&compact&cachebust)](https://github.com/inovex/blazinglyfast/)
-[![Lighthouse score: 85/100](https://lighthouse-badge.appspot.com/?score=85&category=Best Practices&compact&cachebust)](https://github.com/inovex/blazinglyfast/)
+![test](https://badgen.net/runkit/lighthouse-badgen-blazingly-fast-blog-i36ld0rldzve/)
+
+![Lighthouse score: 100/100](https://lighthouse-badge.appspot.com/?score=100&category=Perf&compact&cachebust)
+
+![Lighthouse score: 100/100](https://lighthouse-badge.appspot.com/?score=100&category=PWA&compact&cachebust)
+
+![Lighthouse score: 100/100](https://lighthouse-badge.appspot.com/?score=100&category=A11y&compact&cachebust)
+
+![Lighthouse score: 100/100](https://lighthouse-badge.appspot.com/?score=100&category=Best Practices&compact&cachebust)
 
 This is a sample repo which uses [gatsby](https://github.com/gatsbyjs/gatsby) starter-blog and shows how you can leverage modern performance quality assurance technqiues on how to start with a fast and performant blog and how to keep it to notch. You can use most of the tools with all other web project based on vue, react angular or vanilla js.
 
