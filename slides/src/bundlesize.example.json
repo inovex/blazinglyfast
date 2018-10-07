@@ -1,5 +1,6 @@
 "scripts": {
-  "test:size": "bundlesize"
+  "test": "npm-run-all -p test test-bundlesize",
+  "test:bundlesize": "bundlesize",
 },
 "bundlesize": [
   {
