@@ -15,7 +15,7 @@ install:
 
 before_script:
   - yarn build # build project
-  - yarn test # run performance prechecks
+  - yarn test:size # run performance prechecks
 
 script:
   - NOW_URL="$(now --public --token=$NOW_TOKEN --team=inovex)" # deploy to now
